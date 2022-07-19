@@ -6,14 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <style>
+            :root {
+                --app-height: 100vh;
+            }
             html, body {
                 padding: 0;
                 margin: 0;
                 width: 100%;
-                height: 100%;
+                height: var(--app-height);
                 background-color: red;
-                touch-action: none;
-                overscroll-behavior-x: none;
+                touch-action: pan-right pan-down;
                 position: relative;
             }
             .wrapper {
@@ -24,17 +26,19 @@
                 bottom: 0;
                 width: 100%;
                 height: auto;
+                z-index: 8;
+                display: block;
             }
             .fixed {
-
                 width: 100%;
                 height: 30px;
             }
             .content {
-                height: 100%;
+                height: var(--app-height);
                 width: 100%;
                 display: flex;
                 align-items: flex-end;
+                flex: 1;
             }
             input {
                 position: absolute;
@@ -48,7 +52,7 @@
         
             <h2>Testing touh-action for ios</h2>
             <p>and some height</p>
-            <input type="number">
+            <input type="text">
             <div class="wrapper">
             <div class="content">
                 <button class="fixed">Submit</button>
@@ -56,4 +60,8 @@
         </div>
         
     </body>
+    <script>
+        const doc = document.documentElement;
+        doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+    </script>
     </html>
