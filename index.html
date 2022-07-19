@@ -15,7 +15,6 @@
                 width: 100%;
                 height: var(--app-height);
                 background-color: red;
-                touch-action: pan-x;
                 position: relative;
             }
             .wrapper {
@@ -41,7 +40,6 @@
                 flex: 1;
             }
             .form {
-                height: 100%;
                 display: flex;
                 flex-direction: column;
             }
@@ -55,7 +53,7 @@
         
             <h2>Testing touh-action for ios</h2>
             <p>and some height</p>
-            <p>new</p>
+            <p class="available"></p>
             
             <div class="wrapper">
             <div class="content">
@@ -73,12 +71,18 @@
 
         const form = document.querySelector('.form');
 
+        const available = document.querySelector('.available');
+        available.innerText = window.screen.availHeight
         const input = document.querySelector('input');
         input.addEventListener('focus', () => {
-            form.style.height = 'auto'
+            // form.style.height = 'auto'
+        available.innerText = window.screen.availHeight
+
         })
         input.addEventListener('blur', () => {
-            form.style.height = '100%'
+            // form.style.height = '100%'
+        available.innerText = window.screen.availHeight
+
         })
     </script>
     </html>
