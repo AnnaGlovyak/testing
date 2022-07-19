@@ -40,11 +40,14 @@
                 align-items: flex-end;
                 flex: 1;
             }
+            .form {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
             input {
-                position: absolute;
-                top: 70px;
-                width: 100%;
-                z-index: 10;
+                margin-top: 50px;
+                margin-bottom: auto;
             }
         </style>
     </head>
@@ -52,10 +55,13 @@
         
             <h2>Testing touh-action for ios</h2>
             <p>and some height</p>
-            <input type="text">
+            
             <div class="wrapper">
             <div class="content">
+                <div class="form">
+                <input type="text">
                 <button class="fixed">Submit</button>
+            </div>
             </div>
         </div>
         
