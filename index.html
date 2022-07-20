@@ -41,6 +41,7 @@ input {
 
     <input type="text" data-stickto="top" />
     <input type="text" data-stickto="bottom" />
+    <div>
     
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
     
@@ -69,39 +70,65 @@ input {
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
     
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
+</div>
 </body>
 <script>
 // @ref https://github.com/WICG/visual-viewport
 // @ref https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API
 // @ref https://rdavis.io/articles/dealing-with-the-visual-viewport
-console.clear();
+// console.clear();
 
-let pendingUpdate = false;
+// const header = document.querySelector('[data-stickto="top"]')
+// const footer = document.querySelector('[data-stickto="bottom"]')
 
-function viewportHandler(event) {
-	if (pendingUpdate) return;
-	pendingUpdate = true;
+// let pendingUpdate = false;
 
-	requestAnimationFrame(() => {
-		pendingUpdate = false;
+// function viewportHandler(event) {
+// 	if (pendingUpdate) return;
+// 	pendingUpdate = true;
+
+// 	requestAnimationFrame(() => {
+// 		pendingUpdate = false;
 		
-		// Stick to top
+// 		// Stick to top
 		
 		
-		// Stick to bottom
-		if (window.visualViewport.offsetTop >= 0) { 
-            document.querySelector('[data-stickto="top"]').style.transform = `translateY(${ Math.max(0,Math.min(
-                document.documentElement.scrollHeight - window.visualViewport.height,
-                window.visualViewport.offsetTop
-            ))}px)`;
-			// document.querySelector('[data-stickto="bottom"]').style.marginBottom = `${Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop)}px`;
-			document.querySelector('[data-stickto="bottom"]').style.transform = `translateY(-${Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop)}px)`;
-		}
-	});
-}
+// 		// Stick to bottom
+// 		if (window.visualViewport.offsetTop >= 0) { 
+//             document.querySelector('[data-stickto="top"]').style.transform = `translateY(${ Math.max(0,Math.min(
+//                 document.documentElement.scrollHeight - window.visualViewport.height,
+//                 window.visualViewport.offsetTop
+//             ))}px)`;
+// 			// document.querySelector('[data-stickto="bottom"]').style.marginBottom = `${Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop)}px`;
+// 			document.querySelector('[data-stickto="bottom"]').style.transform = `translateY(-${Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop)}px)`;
+// 		}
+// 	});
+// }
 
-window.visualViewport.addEventListener("scroll", viewportHandler);
-window.visualViewport.addEventListener("resize", viewportHandler);
+// window.visualViewport.addEventListener("scroll", viewportHandler);
+// window.visualViewport.addEventListener("resize", viewportHandler);
+
+var bottomBar = document.querySelector('[data-stickto="bottom"]')
+          var viewport = window.visualViewport;
+          function viewportHandler() {
+              var layoutViewport = document.querySelector('div');
+
+              // Since the bar is position: fixed we need to offset it by the visual
+              // viewport's offset from the layout viewport origin.
+              var offsetX = viewport.offsetLeft;
+              var offsetY = viewport.height
+                          - layoutViewport.getBoundingClientRect().height
+                          + viewport.offsetTop;
+
+              // You could also do this by setting style.left and style.top if you
+              // use width: 100% instead.
+              bottomBar.style.transform = 'translate(' + 
+                                          offsetX + 'px,' +
+                                          offsetY + 'px) ' +
+                                          'scale(' + 1/viewport.scale + ')'
+          }
+          window.visualViewport.addEventListener('scroll', viewportHandler);
+          window.visualViewport.addEventListener('resize', viewportHandler);
 
 </script>
 </html>
