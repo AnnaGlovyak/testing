@@ -26,9 +26,9 @@
       touch-action: none;
     }
     header {
-        /* position: fixed;
+        position: absolute;
         top: 0;
-        width: 100%; */
+        width: 100%;
     }
     main {
       overflow-y: scroll;
@@ -79,20 +79,20 @@
   </footer>
 </body>
 <script>
-    const input = document.querySelector('.user-input')
-    input.addEventListener('focus', (e) => {
-            const header = document.querySelector('header')
-            const main = document.querySelector('main')
-            // main.style.flex = 'none'
-            main.scrollTo(0, 0)
-            document.body.scrollTop = 0;
-            // header.style.marginTop = `${document.documentElement.scrollTop}px`
-            // header.innerText = `${document.documentElement.scrollTop}px`
+    // const input = document.querySelector('.user-input')
+    // input.addEventListener('focus', (e) => {
+    //         const header = document.querySelector('header')
+    //         const main = document.querySelector('main')
+    //         // main.style.flex = 'none'
+    //         main.scrollTo(0, 0)
+    //         document.body.scrollTop = 0;
+    //         // header.style.marginTop = `${document.documentElement.scrollTop}px`
+    //         // header.innerText = `${document.documentElement.scrollTop}px`
     
         
-    })
-    const header = document.querySelector('header')
-     const main = document.querySelector('main')
+    // })
+    // const header = document.querySelector('header')
+    //  const main = document.querySelector('main')
     // main.addEventListener('scroll', e => {
     //     console.log(main.pageYOffset)
     //         header.style.marginTop = `${main.pageYOffset}px`
