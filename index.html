@@ -1,89 +1,75 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <style>
-            :root {
-                --app-height: 100vh;
-            }
-            html, body {
-                padding: 0;
-                margin: 0;
-                width: 100%;
-                height: var(--app-height);
-                background-color: red;
-                position: relative;
-            }
-            .wrapper {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                width: 100%;
-                height: auto;
-                z-index: 8;
-                display: block;
-            }
-            .fixed {
-                width: 100%;
-                height: 30px;
-            }
-            .content {
-                height: var(--app-height);
-                width: 100%;
-                display: flex;
-                align-items: flex-end;
-                flex: 1;
-            }
-            .form {
-                display: flex;
-                flex-direction: column;
-                padding-bottom: 50px;
-            }
-            input {
-                margin-top: 50px;
-                margin-bottom: auto;
-            }
-        </style>
-    </head>
-    <body>
-        
-            <h2>Testing touh-action for ios</h2>
-            <p>and some height</p>
-            <p class="available"></p>
-            
-            <div class="wrapper">
-            <div class="content">
-                <div class="form">
-                <input type="text">
-                <button class="fixed">Submit</button>
-            </div>
-            </div>
-        </div>
-        
-    </body>
-    <script>
-        const doc = document.documentElement;
-        doc.style.setProperty("--app-height", `${window.screen.availHeight}px`);
-
-        const form = document.querySelector('.form');
-
-        const available = document.querySelector('.available');
-        available.innerText = window.screen.availHeight
-        const input = document.querySelector('input');
-        input.addEventListener('focus', () => {
-            // form.style.height = 'auto'
-        available.innerText = window.screen.availHeight
-
-        })
-        input.addEventListener('blur', () => {
-            // form.style.height = '100%'
-        available.innerText = window.screen.availHeight
-
-        })
-    </script>
-    </html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    
+    /* Check these codes */
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      background-color: grey;
+    }
+    header,
+    footer {
+      flex: none;
+      background-color: DodgerBlue;
+      padding: 10px;
+    }
+    main {
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      flex: auto;
+      background-color: moccasin;
+    }
+    
+    /* These are not related to your topic it's just for styling */
+    .msg {
+      padding: 20px;
+      margin: 20px;
+      background-color: lightgreen;
+    }
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .user-input {
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid grey;
+      height: 20px;
+      display: block;
+    }
+    .my-btn {
+        margin-top: 50px;
+        display: block;
+    }
+  </style>
+  <title>Template</title>
+</head>
+<body>
+  <header>
+    This is header
+  </header>
+  <main>
+    <p class="msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </main>
+  <footer>
+    <div class="input-container">
+      <input class="user-input" type="text" name="" value="Type something here...">
+      <button class="my-btn">My button</button>
+    </div>
+  </footer>
+</body>
+</html>
