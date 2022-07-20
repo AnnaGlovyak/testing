@@ -81,7 +81,6 @@
 <script>
     const input = document.querySelector('.user-input')
     input.addEventListener('focus', (e) => {
-        setTimeout(() => {
             const header = document.querySelector('header')
             const main = document.querySelector('main')
             // main.style.flex = 'none'
@@ -89,7 +88,7 @@
             document.body.scrollTop = 0;
             // header.style.marginTop = `${document.documentElement.scrollTop}px`
             // header.innerText = `${document.documentElement.scrollTop}px`
-        })
+    
         
     })
     const header = document.querySelector('header')
