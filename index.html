@@ -5,128 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     
-    * {
-	box-sizing: border-box;
-}
+    /* Check these codes */
+    html, body {
+      margin: 0;
+      height: 100%;
+      touch-action: none;
 
-html, body {
-	margin: 0;
-	padding: 0;
-}
-
-input {
-	display: block;
-	width: 100%;
-	font-size: 20px;
-}
-
-[data-stickto] {
-	position: fixed;
-    transform: translateZ(0);
-}
-
-[data-stickto="top"] {
-	top: 0;
-	background: red;
-}
-
-[data-stickto="bottom"] {
-	bottom: 0;
-	background: green;
-}
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: grey;
+    }
+    header,
+    footer {
+      flex: none;
+      background-color: DodgerBlue;
+      padding: 10px;
+      touch-action: none;
+    }
+    header {
+        /* position: fixed;
+        top: 0;
+        width: 100%; */
+    }
+    main {
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      flex: auto;
+      background-color: moccasin;
+    }
+    
+    /* These are not related to your topic it's just for styling */
+    .msg {
+      padding: 20px;
+      margin: 20px;
+      background-color: lightgreen;
+    }
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .user-input {
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid grey;
+      height: 20px;
+      display: block;
+      touch-action: none;
+    }
+    .my-btn {
+        margin-top: 50px;
+        display: block;
+    }
   </style>
   <title>Template</title>
 </head>
 <body>
-
-    <input type="text" data-stickto="top" />
-    <div>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
-</div>
-
-<input type="text" data-stickto="bottom" />
+  <header>
+    This is header
+  </header>
+  <main>
+    <p class="msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </main>
+  <footer>
+    <div class="input-container">
+      <input class="user-input" type="text" name="" value="Type something here...">
+      <button class="my-btn">My button</button>
+    </div>
+  </footer>
 </body>
 <script>
-// @ref https://github.com/WICG/visual-viewport
-// @ref https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API
-// @ref https://rdavis.io/articles/dealing-with-the-visual-viewport
-// console.clear();
-
-// const header = document.querySelector('[data-stickto="top"]')
-// const footer = document.querySelector('[data-stickto="bottom"]')
-
-// let pendingUpdate = false;
-
-// function viewportHandler(event) {
-// 	if (pendingUpdate) return;
-// 	pendingUpdate = true;
-
-// 	requestAnimationFrame(() => {
-// 		pendingUpdate = false;
-		
-// 		// Stick to top
-		
-		
-// 		// Stick to bottom
-// 		if (window.visualViewport.offsetTop >= 0) { 
-//             document.querySelector('[data-stickto="top"]').style.transform = `translateY(${ Math.max(0,Math.min(
-//                 document.documentElement.scrollHeight - window.visualViewport.height,
-//                 window.visualViewport.offsetTop
-//             ))}px)`;
-// 			// document.querySelector('[data-stickto="bottom"]').style.marginBottom = `${Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop)}px`;
-// 			document.querySelector('[data-stickto="bottom"]').style.transform = `translateY(-${Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop)}px)`;
-// 		}
-// 	});
-// }
-
-// window.visualViewport.addEventListener("scroll", viewportHandler);
-// window.visualViewport.addEventListener("resize", viewportHandler);
-
-var bottomBar = document.querySelector('[data-stickto="bottom"]')
-          var viewport = window.visualViewport;
-          function viewportHandler() {
-              var layoutViewport = document.querySelector('div');
-
-              // Since the bar is position: fixed we need to offset it by the visual
-              // viewport's offset from the layout viewport origin.
-              var offsetX = viewport.offsetLeft;
-              var offsetY = viewport.height
-                          - layoutViewport.getBoundingClientRect().height
-                          + viewport.offsetTop;
-
-              // You could also do this by setting style.left and style.top if you
-              // use width: 100% instead.
-              bottomBar.style.transform = `translateY(-${Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop)}px)`;
-          }
-          window.visualViewport.addEventListener('scroll', viewportHandler);
-          window.visualViewport.addEventListener('resize', viewportHandler);
-
+    const input = document.querySelector('.user-input')
+    input.addEventListener('focus', (e) => {
+            const header = document.querySelector('header')
+            const main = document.querySelector('main')
+            // main.style.flex = 'none'
+            // main.scrollTo(0, 0)
+            // document.body.scrollTop = 0;
+            console.log(`translate(-${window.visualViewport.offsetTop}px)`)
+            header.style.transform = `translate(-${window.visualViewport.offsetTop}px)`
+            // header.style.marginTop = `${document.documentElement.scrollTop}px`
+            // header.innerText = `${document.documentElement.scrollTop}px`
+    
+        
+    })
+    const header = document.querySelector('header')
+     const main = document.querySelector('main')
+    // main.addEventListener('scroll', e => {
+    //     console.log(main.pageYOffset)
+    //         header.style.marginTop = `${main.pageYOffset}px`
+    //         header.innerText = `${main.scrollTop}px`
+    // })
 </script>
 </html>
