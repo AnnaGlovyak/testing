@@ -86,13 +86,14 @@ function viewportHandler(event) {
 		pendingUpdate = false;
 		
 		// Stick to top
-		document.querySelector('[data-stickto="top"]').style.transform = `translateY(${ Math.max(0,Math.min(
-                document.documentElement.scrollHeight - window.visualViewport.height,
-                window.visualViewport.offsetTop
-            ))}px)`;
+		
 		
 		// Stick to bottom
 		if (window.visualViewport.offsetTop >= 0) { 
+            document.querySelector('[data-stickto="top"]').style.transform = `translateY(${ Math.max(0,Math.min(
+                document.documentElement.scrollHeight - window.visualViewport.height,
+                window.visualViewport.offsetTop
+            ))}px)`;
 			// document.querySelector('[data-stickto="bottom"]').style.marginBottom = `${Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop)}px`;
 			document.querySelector('[data-stickto="bottom"]').style.transform = `translateY(-${Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop)}px)`;
 		}
