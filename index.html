@@ -40,7 +40,6 @@ input {
 <body>
 
     <input type="text" data-stickto="top" />
-    <input type="text" data-stickto="bottom" />
     <div>
     
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
@@ -71,6 +70,8 @@ input {
     
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque pellentesque nisi sit amet tincidunt. Duis mollis lorem porta varius ornare. Cras consectetur, mi non auctor sagittis, dui odio ullamcorper velit, nec cursus eros mi et elit. Proin nec magna porta, tempus neque eget, venenatis lacus. Nulla sed mauris at metus varius cursus. Etiam vestibulum finibus pharetra. Mauris pellentesque est ut nulla volutpat feugiat.</p>
 </div>
+
+<input type="text" data-stickto="bottom" />
 </body>
 <script>
 // @ref https://github.com/WICG/visual-viewport
@@ -108,7 +109,7 @@ input {
 // window.visualViewport.addEventListener("scroll", viewportHandler);
 // window.visualViewport.addEventListener("resize", viewportHandler);
 
-var bottomBar = document.querySelector('[data-stickto="top"]')
+var bottomBar = document.querySelector('[data-stickto="bottom"]')
           var viewport = window.visualViewport;
           function viewportHandler() {
               var layoutViewport = document.querySelector('div');
@@ -122,10 +123,7 @@ var bottomBar = document.querySelector('[data-stickto="top"]')
 
               // You could also do this by setting style.left and style.top if you
               // use width: 100% instead.
-              bottomBar.style.transform = 'translate(' + 
-                                          offsetX + 'px,' +
-                                          offsetY + 'px) ' +
-                                          'scale(' + 1/viewport.scale + ')'
+              bottomBar.style.transform = `translateY(-${Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop)}px)`;
           }
           window.visualViewport.addEventListener('scroll', viewportHandler);
           window.visualViewport.addEventListener('resize', viewportHandler);
