@@ -99,12 +99,28 @@
     
         
     })
-    const header = document.querySelector('header')
-     const main = document.querySelector('main')
-    // main.addEventListener('scroll', e => {
-    //     console.log(main.pageYOffset)
-    //         header.style.marginTop = `${main.pageYOffset}px`
-    //         header.innerText = `${main.scrollTop}px`
-    // })
+
+    let pendingUpdate = false;
+
+function viewportHandler(event) {
+	if (pendingUpdate) return;
+	pendingUpdate = true;
+
+	requestAnimationFrame(() => {
+		pendingUpdate = false;
+		
+		// Stick to top
+		document.querySelector('header').style.transform = `translateY(${ Math.max(0, window.visualViewport.offsetTop)}px)`;
+		
+		// Stick to bottom
+		// if (window.visualViewport.offsetTop >= 0) {
+		// 	// document.querySelector('[data-stickto="bottom"]').style.marginBottom = `${Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop)}px`;
+		// 	document.querySelector('[data-stickto="bottom"]').style.transform = `translateY(-${Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop)}px)`;
+		// }
+	});
+}
+
+window.visualViewport.addEventListener("scroll", viewportHandler);
+window.visualViewport.addEventListener("resize", viewportHandler);
 </script>
 </html>
