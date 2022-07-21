@@ -26,9 +26,9 @@
       touch-action: none;
     }
     header {
-        /* position: fixed;
+        position: fixed;
         top: 0;
-        width: 100%; */
+        width: 100%;
     }
     main {
       overflow-y: scroll;
@@ -93,7 +93,7 @@
             // main.scrollTo(0, 0)
             // document.body.scrollTop = 0;
             // console.log(`translate(-${window.visualViewport.offsetTop}px)`)
-            // header.style.transform = `translate(-${window.visualViewport.offsetTop}px)`
+            header.style.transform = `translateY(${window.visualViewport.offsetTop}px)`
             // header.style.marginTop = `${document.documentElement.scrollTop}px`
             // header.innerText = `${document.documentElement.scrollTop}px`
     
